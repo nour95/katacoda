@@ -28,7 +28,13 @@
           "target": "/home/scrapbook/",
           "chmod": "+x"
           }
-        ]
+        ],
+      "host01": [
+        {
+          "file": "*",
+          "target": "/root"
+        }
+      ]
     },
 
     "finish": {
