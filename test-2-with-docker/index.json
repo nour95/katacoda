@@ -21,6 +21,16 @@
     "intro": {
       "text": "intro.md"
     },
+    "assets": {
+      "client": [
+        {
+          "file": "writtenScript",
+          "target": "/home/scrapbook/",
+          "chmod": "+x"
+          }
+        ]
+    },
+
     "finish": {
       "text": "finish.md"
     }

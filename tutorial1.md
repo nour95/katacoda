@@ -39,10 +39,11 @@ and don't forget the point at the end
 docker run -it nour-ubuntu
 
 
-
+begin by this:
 https://www.youtube.com/watch?v=JprTjTViaEA&t=642s
 
-
+then this:
+https://www.youtube.com/watch?v=YFl2mCHdv24
 
 
 
