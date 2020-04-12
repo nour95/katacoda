@@ -1,4 +1,4 @@
-# Some basic commands (to be moved to step 2)
+## Create a container and run it
 
 We can see all the images that had been installed in your system, you can run:
 `docker images`{{execute}}.
