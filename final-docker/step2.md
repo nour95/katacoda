@@ -1,17 +1,31 @@
-# Some basic commands
 
-We can see all the containers that had been installed in your system, you can run:
-```bash
-docker ps -a
-```
+//----------
 
 
-`docker`{{copy}} // good for the vim thing
-
-`docker ps -a`{{execute}}
 
 
-Since we haven't installed any container yet, we will see that the list is empty
+Now if want to start (restart) this container again, and called:
+`docker start hello-world`{{execute}}, it will show you an error message. (What?? face).
+and even if you add the flag '-i' which
+
+
+
+
+However, you maybe didn't like the name 'hello-world'. So you can basically rename the container by adding the flag `--name`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //----------------
