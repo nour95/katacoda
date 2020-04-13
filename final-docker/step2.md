@@ -5,7 +5,7 @@ If we just continue calling `docker run hello-world`{{execute}} every time we wa
 A great solution is to use the `start` command. This command won't create a new container, it will started any stopped (exited) containers.
 
 However if we run:
-`docker start -i hello-world`{{execute}} (I will explain the flag -i in the next step), it will show you an error message (What?? face),
+`docker start -i hello-world`{{execute}} (I will explain the flag -i in a later step), it will show you an error message (What?? face),
 ```bash
 Error: No such container: hello-world
 ```
