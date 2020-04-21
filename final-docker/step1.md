@@ -3,12 +3,15 @@
 We can see all the images that had been installed in your system, you can run:
 `docker images`{{execute}}.
 
-Here we can see that Katacoda has many already installed images. But has no ready containers (pre-created containers).
-
 We can see all the container that have been created in your system through running:
 `docker ps -a`{{execute}}
 
 Since we haven't created any container yet, we will see that the list is empty.
+
+Thus we can conclude that Katacoda has many already installed images. But has no ready containers (pre-created containers).
+
+**Note:** the `-a` flag means basically show all containers. 
+
 <!---
 TODO diff between images and containers.
 https://www.edureka.co/community/18657/what-is-the-difference-between-a-docker-image-and-container
