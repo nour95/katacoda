@@ -18,7 +18,7 @@ We can remove things using the `rm` command. E.g.
 
 However, it is little boring to remove every container by itself. that will take a lot of time. However docker is so nice and there is a way that we can use to fix this issue.
 - We can remove all the exited container by call:
-`docker rm $(docker ps -a -f status=exited -q)`
+`docker rm $(docker ps -a -f status=exited -q)`{{execute}}
 
 **Note** we have used the `-f` flag that means according to the
 [documentation](https://docs.docker.com/engine/reference/commandline/ps/): `Filter output based on conditions provided`
