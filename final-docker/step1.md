@@ -1,27 +1,25 @@
 ## Create a container and run it
 
-We can see all the images that had been installed in your system, you can run:
-`docker images`{{execute}}.
+Let's start by looking at all the images installed on the machine! We can achieve this goal by issuing the following command on the terminal (or by pressing the command below):
 
-Here we can see that Katacoda has many already installed images. But has no ready containers (pre-created containers).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker images`{{execute}}.
 
-We can see all the container that have been created in your system through running:
-`docker ps -a`{{execute}}
-
-Since we haven't created any container yet, we will see that the list is empty.
+We can see that Katacoda has a few images installed already! An image is...
 <!---
 TODO diff between images and containers.
 https://www.edureka.co/community/18657/what-is-the-difference-between-a-docker-image-and-container
 -->
 
-We can now try to install another image and create a container of it and see what will happen.
-Since programmers love to begin with hello-world functions/things, let's install a hello-world image. Run:
-`docker run hello-world`{{execute}}
+Now that we know the difference betweeen an `image` and a `container`, let's list all of the currently available containers: 
 
-This command `run` will try to find the image `hello-world` locally and then **create** a container and **run** it. But since we hadn't install this image before, it won't find anything.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker ps -a`{{execute}}
 
-However docker is very nice and great so even if it didn't find the image locally, it will search about it in a database on the internet or what is called: docker hub.
-Docker search there and find such image and install it. Then it create a container of this image.
+Unsurprisingly, since we haven't created any container yet, we will see that the list is empty. Let's change that! We can try to install another image and create a container of it and see what will happen. Since programmers love to begin with hello-world, let's do that as well. Run:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker run hello-world`{{execute}}
+
+This command will try to find the image `hello-world` locally, and then **create** a container and finally **run** it. But since we haven't installed this image before, it won't find anything locally! However, docker is very nice and great, so even if it didn't find the image locally, it will search for it in a database on the internet called `docker hub`, and download it from there!
+Once the image is found, a container of this image is created.
 
 Another nice thing about docker is that it prints a message to you that explain to you what has just happened with more details:
 
@@ -54,17 +52,19 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
-Now if when we run: `docker images`{{execute}}, we can see the image `hello-world` between the images.
+Now, if when we run
 
-We can also see that a container of this image has been created by running: `docker ps -a`{{execute}}.
-We can see that this container has a wired name and that it had been executed and exited from few seconds ago.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker images`{{execute}}, 
 
-**Note**, if you now want to rerun this container and called:
-`docker run hello-world`{{execute}}, you will note that this happen faster (since we now have already installed the image). Another thing that you can notice is that another container of the same image has been created (if you call `docker ps -a`{{execute}} again).
+we can see the image `hello-world`! 
 
-That is because the command `run` don't just run (start) a container, it also **create** a container (create one regardless if there is a pre-created container or not).
+We can also see that a container of this image has been created by running: `docker ps -a`{{execute}} again. Some additional infromation we can see is the weird name the container has been given, as well as the fact it was executed and exited recently.
 
-In the next step, I will explain more how we can start an already exited container and how to remove one.
+**Note**, if you now want to rerun this container (`docker run hello-world`{{execute}}), you will notice that it's much faster. This is because we now have already installed the image, and that step can be skipped entirely. Another thing that you can notice is that another container of the same image has been created (if you call `docker ps -a`{{execute}} again).
+
+That is because the command `run` don't just run (start) a container, it also **create** a container (regardless if there is a pre-created container or not).
+
+In the next step, I will explain how we can start an already exited container, and also how to remove one.
 
 
 
