@@ -10,7 +10,7 @@ TODO diff between images and containers.
 https://www.edureka.co/community/18657/what-is-the-difference-between-a-docker-image-and-container
 -->
 
-Now that we know the difference betweeen an `image` and a `container`, let's list all of the currently available containers: 
+Now that we know the difference betweeen an `image` and a `container`, let's list all of the currently available containers (**Note:** the `-a` flag basically means show all containers): 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker ps -a`{{execute}}
 
