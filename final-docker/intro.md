@@ -1,11 +1,3 @@
-Will you explain the background here?
+This tutorial will give you an introduction to Docker! But before we begin, what is Docker? Docker is a platform that allows developers to build, deploy and manage containerized applications. As this is a tuturial aimed at beginners, the concept of containers might not be obvious at first, so a short explanation is warrented. Containers are a way of packaging up code and all of its dependencies so that the application can be deployed as one package, avoiding incompatibility issues between different envirmonments. 
 
-- what is Docker?
-- the relationship to devops?
-- the difference between an image and container?
-
-
-or do you prefer to write them or some of them in step1 and maybe step2?
-
-
-In this case please feel free to move things as you wish
+The container technology is often compared to VM:s, which offer similar services. Containers are more lightweight however, since they don't carry its own instance of a guest operating system,unlike VM:s. This makes them valueable from a devops perspective, as the ease deployment, provision and restart makes them perfect for CI/CD pipelines.  
