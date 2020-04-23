@@ -4,13 +4,9 @@ Let's start by looking at all the images installed on the machine! We can achiev
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker images`{{execute}}.
 
-We can see that Katacoda has a few images installed already! An image is...
-<!---
-TODO diff between images and containers.
-https://www.edureka.co/community/18657/what-is-the-difference-between-a-docker-image-and-container
--->
+We can see that Katacoda has a few images installed already! An image is an executable package of software that contains the required components for the applicaiton, i.e. the code, system libraries, settings, etc. One clould look at them as instructions for how a container should be contstructed, because thats what happens when you run an image on the Docker Engine! From an OOP perspective, the image would be equated to the object class definition, while the container would be the instance of it (**Note:** you could have multiple instances, i.e. containers stemming from the same image).
 
-Now that we know the difference betweeen an `image` and a `container`, let's list all of the currently available containers (**Note:** the `-a` flag basically means show all containers): 
+Now that we know the difference betweeen an `image` and a `container`, let's also list all of the currently available containers (**Note:** the `-a` flag basically means show all containers): 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker ps -a`{{execute}}
 
