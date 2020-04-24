@@ -16,8 +16,22 @@ You can read more about that [here](https://askubuntu.com/questions/938869/docke
 TODO is this explanation after the link also necessary? I don't think so
 -->
 
-Inside this container you can call all the normal and common terminal commands like: `cd`{{execute}},`ls`{{execute}},`mkdir newFolder`{{execute}},... etc. When you feel satisfied that all of those actually does what they're supposed to do, feel free to `exit`{{execute}}.
+Inside this container you can call all the normal and common terminal commands like: `cd`{{execute}},`ls`{{execute}},... etc. So, for instance, let's create a folder inside of our new container called `test`, and see if it is persistant.
 
+1. First we need to make sure there isn't such a folder already! 
+    * `ls`{{execute}}
+    * Great, there is no folder named `test` here!
+2. Now create the directory
+    * `mkdir test`{{execute}}
+    * Now there is!
+3. Play around to your own liking, and when you feel satisfied, feel free to `exit`{{execute}}
+4. Lets once again start the container, to do so we need to remember what we learnt in step 2.
+    * `docker ps -a`{{execute}}
+    * See which container was exited last
+    * `docker start -i ContainerID`{{copy}} or `docker start -i ContainerName`{{copy}}
+5. Finally, lets see if the directory can be found
+    * `ls`{{execute}}
+6. And there it is!
 
 ### What do the flag the -i and -it do?
 
