@@ -1,6 +1,6 @@
 ## Install and run another container
 
-Let's now do something a little bit more complicated and interactive that we can use and see. Now, after we had learnt some basic commands, we can move on from the `Hello world` program to the next step.
+Let's now do something a little bit more complicated and interactive that we can use and see. Now, after we have learnt some basic commands, we can move on from the `Hello world` program to the next step.
 
 So first, let's create a container that can run an ubuntu terminal (e.g. if you have mac or you want to run some command in a terminal or if you want to do some other complicated things as we will see in a later step). Call:
 
