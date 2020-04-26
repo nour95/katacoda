@@ -1,7 +1,6 @@
 ## Listen and see the changes directly
 
-<!-- list on port 80 and update the things directly
-
+<!--
 TODO Another good site that explain how to remove images:
 https://linuxize.com/post/how-to-remove-docker-images-containers-volumes-and-networks/#remove-one-or-more-images
 
@@ -11,7 +10,7 @@ docker image rm imageID
 
 Great! We can now run an apache server through docker. That is amazing. However we can still making this thing even more interesting and amazing.
 
-Open another terminal in Katacoda, you can do this through clicking the plus sign next to Dashbord as the image below:
+Open another terminal in Katacoda, you can do this through clicking the plus sign next to Dashboard as the image below:
 
 ![plus_sign](./assets/plus_sign.jpg)
 
@@ -24,7 +23,7 @@ In this new terminal called `Terminal 2` change the `index.php` file.
 - Change the text that we echoed to any thing else, E.g. `Hello 2, from same index file` (Don't change anything else, keep the other commands as they were).
 - Finally type `esc` and then `:wq`{{execute}}
 
-Now if you go to the Dashbord again and clicked the refresh button, nothing will change. You need basically to click `^C` in the Terminal 1 to stop container and exit it. and then rebuild the image and recreate a container.
+Now if you go to the Dashboard again and clicked the refresh button, nothing will change. You need basically to click `^C` in the Terminal 1 to stop container and exit it. and then rebuild the image and recreate a container.
 
 Imagine that you want to write a whole php and apache project. It will be very boring to do so every time you change something in the in the `index.php` or in the `src` folder, Especially if you are debugging and trying to find some errors.
 
@@ -41,14 +40,14 @@ TODO And the excute command doesn't work for `^c`
 Then instead for running the container using the `run` command used in  step 6: `docker run -p 80:80 my-php`, call this instead:
 `docker run -p 80:80 -v /root/myPHP/src/:/var/www/html/  my-php`{{execute T1}}.
 
-Now if you refreshed the Dashbord, you will obviously see the last change we have done to the index file. Furthermore, if you go again to the `Terminal 2`, and changes the `index.php` file to echo `Helloooo 3, from saammme index file` using the previous mentioned steps:
+Now if you refreshed the Dashboard, you will obviously see the last change we have done to the index file. Furthermore, if you go again to the `Terminal 2`, and changes the `index.php` file to echo `Helloooo 3, from saammme index file` using the previous mentioned steps:
 
 - Call `vim myPHP/src/index.php`{{execute T2}}
 - type `i`{{execute T2}} to enter the insert mode
 - Change the text that we echoed to any thing else, E.g. `Helloooo 3, from saammme index file` (Don't change anything else, keep the other commands as they were).
 - Finally type `esc` and then `:wq`{{execute}}
 
-You will see the same text appear to you in the Dashbord if you refresh it and without stopping the running process in the first terminal.
+You will see the same text appear to you in the Dashboard if you refresh it and without stopping the running process in the first terminal.
 
 #### Why do that happened?
 
@@ -89,18 +88,12 @@ For more information about that you can check the [documentation](https://docs.d
 
 
 #### The `-v` flag
+Back to the command we wrote:
+`docker run -p 80:80 -v /root/myPHP/src/:/var/www/html/  my-php`
 
+I have mentioned that here we are using `bind mount` to mount a folder in our file system (in our host machine) which is in our case: `/root/myPHP/src`. This file will be now shared between the container and our host machine. The second path written in the command (`/var/www/html/`) is the path where the our folder (`src`) will be mounted in the container we created.
 
-
-
-
-<!-- TODO: -->
-// I am just testing that this is working, I will continue writing:
-- explain the -v flag and what happened in the last command
-- diff between bind mount and volume
-
-
-
+And thus now any changes we will make in the `src` file will directly be modified in the container and we can directly see it in the Dashboard.
 
 
 
@@ -108,13 +101,10 @@ For more information about that you can check the [documentation](https://docs.d
 
 
 
-<!--
-TODO what are the differences between bind mount and volume when running a container
--->
 
 
 
 
 
 
-//-----------------------------
+-----------------------------
