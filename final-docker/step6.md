@@ -42,7 +42,7 @@ In this page we can find many section. One of them called
 `Supported tags and respective Dockerfile links` (it is almost the first section). From there we can choose all version identifiers of this docker image. The version identifier of a docker image called a `tag`. One can have multiple versions for the same image.
 
 However, since this image is quite famous and there are always new variations and versions, the list of all the supported tags exceed the limit of the of the Hub length, thus hub page tells us to visit  [this github link](https://github.com/docker-library/docs/blob/master/php/README.md#supported-tags-and-respective-dockerfile-links) instead, as the image below, where we can see the whole list of the tags existed for this image.
-![hub_supported_tag](hub_supported_tag.png)
+![hub_supported_tag](./assets/hub_supported_tag.png)
 
 Find the one that has the **newer version of PHP** and **Apache**. You don't need to click on it, we just need to know the name of this tag, here I choose `7.4-apache`.
 
@@ -52,7 +52,7 @@ TODO DO I need to explain what the user will see if he clicked on it, It will ac
 
 If you scroll down in the Github page or in docker hub, you will find under the section called `Image Variants` another section called `php:<version>-apache` that explain to you how to use the `apache` with docker and what should we wrote in the Dockerfile, as the image below show:
 
-![use_apache_github](use_apache_github.png)
+![use_apache_github](./assets/use_apache_github.png)
 
 There you can see that two command lines written there are almost the same as what we wrote previously in our Dockerfile.
 There we have just defined that our base image will be the one called `php`. After the `:` we will write the tag we choose `7.4-apache`. We have just change the version of PHP to a newer version.
