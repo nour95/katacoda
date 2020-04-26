@@ -1,13 +1,15 @@
 ## Build a slightly more interesting container
 
 Create an easy web server through docker, that listen to port 80:
-1. Create index.php in /src
+1. Create php file `index.php` in `/src`
+
 ```php
 <?php
-
 echo "Some message";
 ```
+
 2. Create Dockerfile:
+
 ```
 FROM php:7.0-apache
 COPY src/ /var/www/html
