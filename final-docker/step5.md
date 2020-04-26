@@ -45,7 +45,7 @@ Now if we call:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker run -it my-first-image`{{execute}},
 
-we can see that the image printed the message we wrote in the Dockerfile: `Hello, happy to see you`.
+we can see that the the message we wrote in the Dockerfile is printed: `Hello, happy to see you`.
 
 
 
