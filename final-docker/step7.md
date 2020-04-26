@@ -13,7 +13,7 @@ Great! We can now run an apache server through docker. That is amazing. However 
 
 Open another terminal in Katacoda, you can do this through clicking the plus sign next to Dashbord as the image below:
 
-![plus-sign](./assets/.png) TODO add an image
+![plus_sign](./assets/plus_sign.jpg)
 
 Then choose `Open New Terminal`
 
@@ -30,16 +30,29 @@ Imagine that you want to write a whole php and apache project. It will be very b
 
 There is a nice very easy solution to this issue that make your changes appear as if it synchronising with docker container that is run.
 
-basically go back to `Terminal 1` (called only in the `Terminal` in Katacoda) and stop the running container using `^C`{{execute T1}} or ( `control + c` if you are using Windows).
+basically go back to `Terminal 1` (called only in the `Terminal` in Katacoda) and stop the running container using `^c`{{execute T1}} or ( `control + c` if you are using Windows).
 
-<!--TODO not sure what is the command to stop a process in Windows
+<!--TODO
+not sure what is the command to stop a process in Windows
+
+TODO And the excute command doesn't work for `^c`
 -->
 
 Then instead for running the container using the `run` command used in  step 6: `docker run -p 80:80 my-php`, call this instead:
 `docker run -p 80:80 -v /root/myPHP/src/:/var/www/html/  my-php`{{execute T1}}.
 
+Now if you refreshed the Dashbord, you will obviously see the last change we have done to the index file. Furthermore, if you go again to the `Terminal 2`, and changes the `index.php` file to echo `Helloooo 3, from saammme index file` using the previous mentioned steps:
+
+- Call `vim myPHP/src/index.php`{{execute T2}}
+- type `i`{{execute T2}} to enter the insert mode
+- Change the text that we echoed to any thing else, E.g. `Helloooo 3, from saammme index file` (Don't change anything else, keep the other commands as they were).
+- Finally type `esc` and then `:wq`{{execute}}
+
+You will see the same text appear to you in the Dashbord if you refresh it and without stopping the running process in the first terminal.
+
+Why do that happened?
+<!-- TODO: -->
 // I am just testing that this is working, I will continue writing:
-- example to see this happen
 - explain the -v flag and what happened in the last command
 - diff between bind mount and volume
 
