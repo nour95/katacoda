@@ -1,4 +1,4 @@
-## listen and see the changes directly
+## Listen and see the changes directly
 
 <!-- list on port 80 and update the things directly
 
@@ -50,7 +50,50 @@ Now if you refreshed the Dashbord, you will obviously see the last change we hav
 
 You will see the same text appear to you in the Dashbord if you refresh it and without stopping the running process in the first terminal.
 
-Why do that happened?
+#### Why do that happened?
+
+In order to understand what happened, we need to have an overview of how the Docker manage and store data.
+All the file that are created inside a container are by default not persistent. That means all the files will be deleted when the container removed or no longer existed.  
+
+Docker has 2 main options that can help containers to store files in the host machine and make the files created inside a container persistent. These 2 options can basically created a shared storage between both the container and the host machine.
+
+The first option called `volume` and the second option called `bind mount` (and it is the one we used in the previous command).
+Actually there is also a third option called `tmpfs mount` but it doesn't work on all systems so We are going to ignore it in this tutorial.
+
+The following image can help us illustrating the difference between the 2 options:
+
+![types-of-mounts](./assets/types-of-mounts.png)
+
+#### difference between `volume` and `bind mount`
+
+- `volumes`: are stored in a specific place inside the host system (E.g. in linux it is usually `/var/lib/docker/volumes`) that is managed by the Docker itself. The other processes (that are non-Docker) shouldn't edit this folder (or filesystem).
+<!-- TODO
+Do I need to mention this: "volumes are managed by Docker and are isolated from the core functionality of the host machine."
+The complete sentenece was copied from the documentation https://docs.docker.com/storage:
+When you create a volume, it is stored within a directory on the Docker host. When you mount the volume into a container, this directory is what is mounted into the container. This is similar to the way that bind mounts work, except that volumes are managed by Docker and are isolated from the core functionality of the host machine. -->
+You can manually create a volume or Docker can itself create one during the creating process of the container.
+
+- `bind mounts`: mount a file or a folder to the container using the full path. That means the files/folder can be anywhere in your system and it doesn't need to be in the Docker host before. However, you should be little careful since bind mount since that you actually can change the host filesystem via processes running in the container (creating changing or deleting important system files or directories).
+
+
+In general `volumes` have more functionality than `bind mounts`.
+E.g. A volume can be used to mount multiple containers with each others simultaneously.
+<!-- TODO
+The complete sentence from the documentation:
+
+A given volume can be mounted into multiple containers simultaneously. When no running container is using a volume, the volume is still available to Docker and is not removed automatically. You can remove unused volumes using docker volume prune.
+-->
+
+For more information about that you can check the [documentation](https://docs.docker.com/storage/)
+
+
+
+#### The `-v` flag
+
+
+
+
+
 <!-- TODO: -->
 // I am just testing that this is working, I will continue writing:
 - explain the -v flag and what happened in the last command
