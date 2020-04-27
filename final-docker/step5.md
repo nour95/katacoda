@@ -15,21 +15,9 @@ The next line contain 2 parts:
 - The `echo "Hello, Happy to see you"`, which is an obvious Linux command that will just print `Hello, Happy to see you"`.
 - The `CMD` command's purpose is to set a default instruction to execute when the container is ran (without an explicit flag overriding this default execution), which in this case is `echo "Hello, Happy to see you"`
 
+**Note** there is a similar command that one can find in other Dockerfile tutorials called `RUN`. The key difference is that the `RUN` command gets executed and commited to the container during the build process (this is called adding a `layer` on top of the underlying image). An example usecase would be to update a software repository in the ubuntu image via `RUN apt-get update` for instance. 
 
-**Note** there is little similar commands that one can see in other tutorial called `RUN`. This command basically can basically according [howToForge](https://www.howtoforge.com/tutorial/how-to-create-docker-images-with-dockerfile/) execute a command **during** the build process of the docker image. E.g. we can use it to update software repository in the ubuntu image as the following:
-`RUN apt-get update`{{execute}}.
-
-<!--
-TODO Add the answer to the question: "what are the differences between RUN and CMD in a Dockerfile" here.
-https://www.howtoforge.com/tutorial/how-to-create-docker-images-with-dockerfile/
-
-https://thenewstack.io/docker-basics-how-to-use-dockerfiles/
-
-In the line 35, I wrote some outlines but not sure if the explanation need to be better (have a better comparsion) or the reference need to be better. I had also copied and pasted things dirctly without various changes.
- -->
-
-
-Now that we're done with creating the dockerfile, let's build our own amazing image.
+Now when we are done with creating a dockerfile, let's build our own amazing image.
 
 Make sure to be in the directory that contain the `Dockerfile` and then call:
 `docker build -t my-first-image .`{{execute}}
