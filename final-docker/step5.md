@@ -7,7 +7,7 @@ Inside the Dockerfile, we need to type a few things, so let's edit the file via 
 Type `i`{{execute}} to enter insert mode and then write the following:
 1. `FROM ubuntu`{{execute}}
 2. `CMD echo "Hello, happy to see you"`{{execute}}(or any other message)
-3. Then type `esc`{{execute}} to escape the insert mode and then type `:wq`{{execute}} to save the changes.
+3. Then type `esc` to escape the insert mode and then type `:wq`{{execute}} to save the changes.
 
 The first command in the Dockerfile, `FROM`, means `The base image for building a new image`. We need a point to start from, and why not use the `ubuntu` image we have some familiarity with!
 
@@ -15,7 +15,7 @@ The next line contains 2 parts:
 - `echo "Hello, happy to see you"`: which is an obvious Linux command that will just print `Hello, happy to see you"`.
 - `CMD`: This command's purpose is to set a default instruction to execute when the container is ran (without an explicit flag overriding this default execution), which in this case is `echo "Hello, happy to see you"`
 
-**Note** there is a similar command that one can find in other Dockerfile tutorials called `RUN`. The key difference is that the `RUN` command gets executed and commited to the container during the build process (this is called adding a `layer` on top of the underlying image). An example usecase would be to update a software repository in the ubuntu image via `RUN apt-get update` for instance. 
+**Note** there is a similar command that one can find in other Dockerfile tutorials called `RUN`. The key difference is that the `RUN` command gets executed and commited to the container during the build process (this is called adding a `layer` on top of the underlying image). An example usecase would be to update a software repository in the ubuntu image via `RUN apt-get update` for instance.
 
 Now when we are done with creating a dockerfile, let's build our own amazing image.
 
@@ -25,7 +25,7 @@ and make sure to not forget the dot at the end.
 
 Some general notes about this command:
 - The `.` at the end of the command represent the location of the `Dockerfile`, i.e. the current directory
-- Here, the `-t` flag allows us to name our image 
+- Here, the `-t` flag allows us to name our image
     - The name must be in lowercase, other than that it's up to the user
 
 Now if we call:

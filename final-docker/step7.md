@@ -2,18 +2,18 @@
 
 Great! We can now run an apache server through docker. That is amazing. However we can still making this thing even more interesting and amazing.
 
-Let's say that we are unhappy with the message we choose to display, and want to change it. 
+Let's say that we are unhappy with the message we choose to display, and want to change it.
 - Call `vim src/index.php`{{execute}}
 - type `i`{{execute}} to enter the insert mode
 - Change the text that we echoed to anything else, E.g. `Hello, this should now be shown!` (Don't change anything else, keep the other commands as they were).
-- Finally type `esc`{{execute}} and then `:wq`{{execute}}
+- Finally type `esc` and then `:wq`{{execute}}
 
 
-We of course want this change to be shown to the people visiting our web server, but if you now go to the Dashboard again, and click the refresh button, nothing will change. This is because `src` was copied by the container, i.e. changes on the local machine won't be reflected in the running container. Imagine that you want to write a whole php and apache project. It will be very boring to repeatedly update the container every time you change something in the `src` folder, especially if you are debugging and trying to find some errors! 
+We of course want this change to be shown to the people visiting our web server, but if you now go to the Dashboard again, and click the refresh button, nothing will change. This is because `src` was copied by the container, i.e. changes on the local machine won't be reflected in the running container. Imagine that you want to write a whole php and apache project. It will be very boring to repeatedly update the container every time you change something in the `src` folder, especially if you are debugging and trying to find some errors!
 
 Let's change this, and luckily for us, Docker offers a nice and easy solution to this issue, that make your changes appear as if it is synchronising with the docker container that is run. First, we'll stop the container via `docker stop my-running-app`{{execute}}.
 
-Recall the command we used to run our container, `docker run -d --name my-running-app -p 80:80 my-php-app`. We will, with a slight modifcation, solve our problem! 
+Recall the command we used to run our container, `docker run -d --name my-running-app -p 80:80 my-php-app`. We will, with a slight modifcation, solve our problem!
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker run -d --name my-updated-running-app -p 80:80 -v /root/step6/src/:/var/www/html/ my-php-app`{{execute}}
 
@@ -21,7 +21,7 @@ The added section to our command is `-v /root/step6/src/:/var/www/html/`, and we
 - Call `vim src/index.php`{{execute}}
 - type `i`{{execute}} to enter the insert mode
 - Change the text that we echoed to any thing else, E.g. `Helloooo, from saammme index file` (Don't change anything else, keep the other commands as they were).
-- Finally type `esc`{{execute}} and then `:wq`{{execute}}
+- Finally type `esc` and then `:wq`{{execute}}
 
 You will see the same text appear to you in the Dashboard if you refresh it.
 
@@ -32,7 +32,7 @@ All the files that are created inside a container are by default not persistent.
 
 Docker has 2 main options to store files in the host machine and make the files created inside a container persistent. These 2 options can basically created a shared storage between both the container and the host machine.
 
-The first option is called `volume`, while the second is called `bind mount` (this is the option we used to solve our problem above). (Actually there is also a third option called `tmpfs mount` but it doesn't work on all operating systems, so we are going to ignore it in this tutorial). 
+The first option is called `volume`, while the second is called `bind mount` (this is the option we used to solve our problem above). (Actually there is also a third option called `tmpfs mount` but it doesn't work on all operating systems, so we are going to ignore it in this tutorial).
 
 #### Difference between `volume` and `bind mount`
 The following image can help us illustrate the difference between the 2 options:
