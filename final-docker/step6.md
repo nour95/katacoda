@@ -65,7 +65,7 @@ And now, there is only one real step left, to run our new container. But first, 
 The `-d` flag allows the container to run in detached mode, i.e. the container will run in the background, while the `-p` flag forwards port 80 of the host to the exposed port 80 in the container.
 
 Let's take a look at our running containers, and make sure that our container is active:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker ps`{{exectute}}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker ps`{{execute}}
 
 If you followed the steps correctly, you should see your container listed as running, and if you once again press the `Dashboard` button, your message should be visible!
 
