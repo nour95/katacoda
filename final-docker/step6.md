@@ -69,12 +69,4 @@ Let's take a look at our running containers, and make sure that our container is
 
 If you followed the steps correctly, you should see your container listed as running, and if you once again press the `Dashboard` button, your message should be visible!
 
-To stop the container you can call:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker stop my-running-app`{{exectute}}
-
-
-
-
-
-//-------------------------------
+-------------------------------
