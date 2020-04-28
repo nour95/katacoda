@@ -1,6 +1,6 @@
 {
-  "title": "Docker",
-  "description": "final docker",
+  "title": "A beginner's guide to Docker",
+  "description": "This tutorial will go through some of the basics of Docker, as well as introducing some more complicated topics",
   "difficulty": "Beginner",
   "time": "30 min",
   "details": {
