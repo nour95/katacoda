@@ -1,7 +1,7 @@
 ## Build a slightly more interesting container
 Let's move on to something a little bit more interesting, by creating a container running a web server!
 
-First, lets go back a step and create a new directory that we will work in. 
+First, lets go back a step and create a new directory that we will work in.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `cd ..`{{execute}}
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `mkdir step6`{{execute}}
@@ -23,12 +23,12 @@ Recall how this was done in the previous step:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `vim index.php`{{execute}}
 
-Enter insert mode by pressing `i`{{execute}}, and write 
+Enter insert mode by pressing `i`{{execute}}, and write
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `<?php`{{execute}}
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `echo "Some message"`{{execute}}
 
-Then press `esc`{{execute}}, followed by `:wq`{{execute}} to leave and save the file. 
+Then press `esc`, followed by `:wq`{{execute}} to leave and save the file.
 
 Next we want to create the Dockerfile for our new contianer. First we need to leave the `src` directory, since the Dockerfile should be created outside of it. Call:
 
@@ -45,9 +45,9 @@ So, before you just copy and paste this, let's take a closer look at each of the
 
 ![use_apache_github](./assets/use_apache_github.png)
 
-These instructions cover the 2 first lines of our Dockerfile. The first line specifies that we want the `php` image, version `<version>-apache`, as a base layer. Do note that the user needs to specify a version for `php`. To choose version, we should visit the `Supported tags and respective Dockerfile links` section on top of the page. Usually, this section allows us to see all version identifiers of a docker image (The version identifier of a docker image is called a `tag`, and as we can see an image can have multiple versions), but due to its size, we are instead redirected [elsewhere](https://github.com/docker-library/docs/blob/master/php/README.md#supported-tags-and-respective-dockerfile-links). On this page, we can see that the latest version of the php image is 7.4 (at least during the writing of this tutorial, time is likely to change this, as evident by the use of 7.2 in the docker hub documentation, even though a later version is available!). 
+These instructions cover the 2 first lines of our Dockerfile. The first line specifies that we want the `php` image, version `<version>-apache`, as a base layer. Do note that the user needs to specify a version for `php`. To choose version, we should visit the `Supported tags and respective Dockerfile links` section on top of the page. Usually, this section allows us to see all version identifiers of a docker image (The version identifier of a docker image is called a `tag`, and as we can see an image can have multiple versions), but due to its size, we are instead redirected [elsewhere](https://github.com/docker-library/docs/blob/master/php/README.md#supported-tags-and-respective-dockerfile-links). On this page, we can see that the latest version of the php image is 7.4 (at least during the writing of this tutorial, time is likely to change this, as evident by the use of 7.2 in the docker hub documentation, even though a later version is available!).
 
-The second line copies the local `src` directory in to the container at the container path `/var/www/html/`, which is the reason we named the directory `src` above. 
+The second line copies the local `src` directory in to the container at the container path `/var/www/html/`, which is the reason we named the directory `src` above.
 
 
 The `EXPOSE` keyword makes the container listen to a specific port, in our case port 80.
@@ -56,13 +56,13 @@ Now, let's continue following the intructions from the docker hub documentation 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker build -t my-php-app .`{{execute}}
 
-Remember, `-t` is the flag that allows us to name our image. 
+Remember, `-t` is the flag that allows us to name our image.
 
 And now, there is only one real step left, to run our new container. But first, how do we see that everything is working as expected? This tutorial is written for Katacoda, and Katacoda offers a simple soultion for this problem. If you press the `Dashboard`-button on top of the page, you will be able to connect to a specific port. Port 80 should already be selected, but make sure that it actually is! So, now we can run the container:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker run -d --name my-running-app -p 80:80 my-php-app`{{execute}}
 
-The `-d` flag allows the container to run in detached mode, i.e. the container will run in the background, while the `-p` flag forwards port 80 of the host to the exposed port 80 in the container. 
+The `-d` flag allows the container to run in detached mode, i.e. the container will run in the background, while the `-p` flag forwards port 80 of the host to the exposed port 80 in the container.
 
 Let's take a look at our running containers, and make sure that our container is active:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `docker ps`{{exectute}}
