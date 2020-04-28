@@ -26,7 +26,7 @@ Recall how this was done in the previous step:
 Enter insert mode by pressing `i`{{execute}}, and write
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `<?php`{{execute}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `echo "Some message"`{{execute}}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `echo "Some message";`{{execute}}
 
 Then press `esc`, followed by `:wq`{{execute}} to leave and save the file.
 
